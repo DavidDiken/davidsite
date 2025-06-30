@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\EventsController;
 
 
 Route::get('/', [MainController::class, 'home']) -> name('home');
-ROute::get('/myhome', [MainController::class, 'myhome']) -> name('myhome');
+
+Route::get('/myhome', [MainController::class, 'myhome']) -> name('myhome');
+
+Route::post('/myhome', [EventsController::class, 'myhome_check'])->name('myhome.check');
+
