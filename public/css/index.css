@@ -1,0 +1,15 @@
+.card {
+    padding: 20px;
+}
+
+.event_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.event_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

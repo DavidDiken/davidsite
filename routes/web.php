@@ -9,5 +9,4 @@ Route::get('/', [MainController::class, 'home']) -> name('home');
 
 Route::get('/myhome', [MainController::class, 'myhome']) -> name('myhome');
 
-Route::post('/myhome', [EventsController::class, 'myhome_check'])->name('myhome.check');
-
+Route::post('/myhome', [MainController::class, 'myhome_check'])->name('myhome.check');
