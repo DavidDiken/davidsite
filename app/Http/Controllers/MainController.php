@@ -16,6 +16,15 @@ class MainController extends Controller
         return view('home', compact('review'));
     }
 
+    public function archiv()
+    {
+        // Загружаем все события из базы
+        $review = Events::all();
+
+        // Возвращаем представление и передаём данные
+        return view('archiv', compact('review'));
+    }
+
     public function myhome()
     {
         return view('myhome');

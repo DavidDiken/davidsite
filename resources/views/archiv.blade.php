@@ -1,31 +1,23 @@
 @extends('layout')
 
-@section('title', 'Home')
+@section('title', 'Archiv')
 
 @section('main_content')
 
     <div>
-        <h1>Home</h1>
+        <h1>Archiv</h1>
         <p>Test</p>
     </div>
     @foreach($review as $el)
         @php
             $daysLeft = floor(\Carbon\Carbon::today()->diffInDays(\Carbon\Carbon::parse($el->datum_bis), false));
         @endphp
-        @if($daysLeft > 0)
+        @if($daysLeft < 0)
+
             <div class="my_card card mb-4 rounded-3 shadow-sm">
                 <div class="event_top">
                     <div class="">
                         <h3>{{ $el->betreff }}</h3>
-                        <p>
-                            @if($daysLeft > 0)
-                                Noch {{ $daysLeft }} Tag{{ $daysLeft > 1 ? 'e' : '' }}
-                            @elseif($daysLeft === 0)
-                                Heute
-                            @else
-                                Abgelaufen
-                            @endif
-                        </p>
                     </div>
                     <p>bis: <span>{{ $el->datum_bis }}</span></p>
                 </div>
@@ -38,8 +30,8 @@
                     <p>{{ $el->vorname }}</p>
                 </div>
             </div>
-        @endif
 
+        @endif
 
     @endforeach
 
